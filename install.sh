@@ -16,7 +16,7 @@ createBackupDir()
 {
     # Create backup directory
     echo "Creating dotfiles backup directory: $1"
-    echo mkdir -p $1
+    mkdir -p $1
 }
 
 backupFile()
@@ -29,7 +29,7 @@ backupFile()
         # File exists
         # Backup the file
         echo "Moving $originalFile to $backupFile"
-        echo mv $originalFile $backupFile
+        mv $originalFile $backupFile
     else
         # File not found
         echo "File $originalFile not found - skipping backup"
@@ -46,7 +46,7 @@ createLink()
         # File exists
         # create symlink
         echo "Creating symlink from $linkName to $linkTarget"
-        echo ln -s $linkTarget $linkName
+        ln -s $linkTarget $linkName
     else
         # File not found
         echo "File $linkTarget not found - skipping symlink creation"
@@ -74,7 +74,7 @@ processVimConfigFile()
     local file="$2"
 
     # Ensure directory exists
-    echo mkdir -p $HOME_DIR/$dir
+    mkdir -p $HOME_DIR/$dir
 
     # Backup original file, if exists
     backupFile $HOME_DIR/$dir/$file $DOTFILES_BACKUP_DIR/$dir/$file
