@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ $# -lt 1 ];then
+    echo "Provide user home dir as parameter"
+    exit 1
+fi
+
 ###############################################################################
 DOTFILES=".bash_profile .bashrc .gitconfig .vimrc .Xdefaults .xinitrc"
 ###############################################################################
@@ -7,7 +12,8 @@ DOTFILES=".bash_profile .bashrc .gitconfig .vimrc .Xdefaults .xinitrc"
 DOTFILES_DIR_NAME=dotfiles
 DOTFILES_BACKUP_DIR_NAME=dotfiles_backup
 
-HOME_DIR=`echo ~`
+#HOME_DIR=`echo ~`
+HOME_DIR="$1"
 DOTFILES_PATH=$HOME_DIR/$DOTFILES_DIR_NAME
 NOW=`date +"%Y%m%d_%H%M"`
 DOTFILES_BACKUP_DIR=$DOTFILES_PATH/$DOTFILES_BACKUP_DIR_NAME_$NOW
