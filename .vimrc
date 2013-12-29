@@ -27,7 +27,8 @@ set tabstop=4
 
 " Set color scheme
 colorscheme solarized
-let g:solarized_termcolors=256
+" Temporarily working only with linux consloe - looks better with 16 colors
+"let g:solarized_termcolors=256
 
 " Set dark backgound
 set background=dark
