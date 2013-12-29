@@ -24,7 +24,7 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 # Define colors for themes here
-if [ $CONSOLE_THEME = "solarized" ]; then
+if [ "$CONSOLE_THEME" = "solarized" ]; then
     CONSOLE_COLOR_BLACK="073642"      # S_base02
     CONSOLE_COLOR_RED="dc322f"        # S_red
     CONSOLE_COLOR_GREEN="859900"      # S_green
