@@ -25,6 +25,7 @@ fi
 
 # Define colors for themes here
 if [ "$CONSOLE_THEME" = "solarized" ]; then
+    # Set console colors
     CONSOLE_COLOR_BLACK="073642"      # S_base02
     CONSOLE_COLOR_RED="dc322f"        # S_red
     CONSOLE_COLOR_GREEN="859900"      # S_green
@@ -41,10 +42,14 @@ if [ "$CONSOLE_THEME" = "solarized" ]; then
     CONSOLE_COLOR_BR_MAGNETA="6c71c4" # S_violet
     CONSOLE_COLOR_BR_CYAN="93a1a1"    # S_base1
     CONSOLE_COLOR_BR_WHITE="fdf6e3"   # S_base3
+
+    # Set dir colors
+    DIR_COLORS_FILE="$HOME/.dir_colors_solarized"
 fi
 
 # Set console solors, if console theme is defined
 if [ -n "$CONSOLE_THEME" ]; then
+    # Set console colors
     echo -en "\e]P0$CONSOLE_COLOR_BLACK"
     echo -en "\e]P1$CONSOLE_COLOR_RED"
     echo -en "\e]P2$CONSOLE_COLOR_GREEN"
@@ -62,5 +67,8 @@ if [ -n "$CONSOLE_THEME" ]; then
     echo -en "\e]PE$CONSOLE_COLOR_BR_CYAN"
     echo -en "\e]PF$CONSOLE_COLOR_BR_WHITE"
     clear # Redraw background
+
+    # Set dir colors 
+    eval $(dircolors -b $DIR_COLORS_FILE)
 fi
 
