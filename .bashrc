@@ -43,8 +43,11 @@ if [ "$CONSOLE_THEME" = "solarized" ]; then
     CONSOLE_COLOR_BR_CYAN="93a1a1"    # S_base1
     CONSOLE_COLOR_BR_WHITE="fdf6e3"   # S_base3
 
-    # Set dir colors
+    # Set dir colors file
     DIR_COLORS_FILE="$HOME/.dir_colors_solarized"
+
+    # Set Midnight Commander colors file
+    MC_COLORS_FILE="$HOME/.config/mc/mc_solarized.ini"
 fi
 
 # Set console solors, if console theme is defined
@@ -70,5 +73,8 @@ if [ -n "$CONSOLE_THEME" ]; then
 
     # Set dir colors 
     eval $(dircolors -b $DIR_COLORS_FILE)
+
+    # Set Midnight Commander colors
+    export $MC_COLORS=$MC_COLORS_FILE
 fi
 
