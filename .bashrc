@@ -75,6 +75,6 @@ if [ -n "$CONSOLE_THEME" ]; then
     eval $(dircolors -b $DIR_COLORS_FILE)
 
     # Set Midnight Commander colors
-    export $MC_COLORS=$MC_COLORS_FILE
+    export MC_SKIN=$MC_COLORS_FILE
 fi
 
