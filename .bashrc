@@ -15,6 +15,24 @@ alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -al'
 
+if [ -z "$DISPLAY" ]; then
+    # Aliases for console
+
+    # Do not use fancy characters to draw outline
+    alias mc='EDITOR=vim VIEWER=$HOME/bin/viewer.sh mc -a'
+else
+    # Aliases for GUI
+
+    alias mc='EDITOR=vim VIEWER=$HOME/bin/viewer.sh mc'
+fi
+
+# Exported variables
+
+export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
+    vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+    -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
+    -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
+
 # Color themes for linux console
 
 # Chose color theme here
